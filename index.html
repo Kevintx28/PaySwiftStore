@@ -594,132 +594,20 @@
 
     .modal-grid {
       display: grid;
-      grid-template-columns: 1fr;
-      gap: 20px;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 22px;
     }
 
-    .payments-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
+    .modal-grid .payments,
+    .modal-grid .qr-grid {
+      grid-column: span 1;
     }
 
-    .payment-icon {
-      width: 42px;
-      height: 42px;
-      object-fit: contain;
-      border-radius: 14px;
-      margin-bottom: 14px;
-      background: rgba(255, 255, 255, 0.06);
-      padding: 8px;
-    }
-
-    .qr-toggle {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      padding: 12px 16px;
-      border-radius: 999px;
-      border: 1px solid rgba(100, 215, 255, 0.18);
-      background: rgba(100, 215, 255, 0.08);
-      color: var(--accent-strong);
-      font-weight: 700;
-      cursor: pointer;
-      transition: transform 0.2s ease, filter 0.2s ease;
-      margin-top: 10px;
-    }
-
-    .qr-toggle.secondary {
-      background: rgba(37, 211, 102, 0.12);
-      color: #d3f3d9;
-      border-color: rgba(37, 211, 102, 0.25);
-    }
-
-    .qr-toggle:hover {
-      transform: translateY(-1px);
-      filter: brightness(1.05);
-    }
-
-    .qr-box {
-      display: none;
-      margin-top: 16px;
-      padding: 16px;
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 18px;
-    }
-
-    .qr-box.open {
-      display: block;
-    }
-
-    .qr-box img {
-      width: 100%;
-      border-radius: 18px;
-    }
-
-    .crypto-wrapper {
-      display: grid;
-      gap: 12px;
-      padding: 18px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 24px;
-    }
-
-    .crypto-header {
-      padding: 16px 18px;
-      border-radius: 20px;
-      background: rgba(100, 215, 255, 0.08);
-      color: var(--accent-strong);
-      font-weight: 700;
-      cursor: pointer;
-      transition: background-color 0.2s ease;
-    }
-
-    .crypto-header.active {
-      background: rgba(100, 215, 255, 0.16);
-    }
-
-    .crypto-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-    }
-
-    .crypto-content.open {
-      max-height: 2000px;
-    }
-
-    .paypal-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      padding: 12px 16px;
-      border-radius: 999px;
-      font-weight: bold;
-      background: #0070ba;
-      color: #fff;
-      text-decoration: none;
-      text-align: center;
-      transition: transform 0.2s ease, filter 0.2s ease;
-      margin-top: 10px;
-    }
-
-    .paypal-button:hover {
-      transform: translateY(-1px);
-      filter: brightness(1.05);
+    .modal-grid .qr-grid {
+      margin-top: 0;
     }
 
     @media (max-width: 840px) {
-      .payments-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 720px) {
       .modal-grid {
         grid-template-columns: 1fr;
       }
@@ -918,160 +806,59 @@
           <button class="modal-close" onclick="closeModal()">×</button>
         </div>
         <div class="modal-grid">
-          <div class="payments-grid">
+          <div class="payments">
             <div class="payment-card">
-              <img src="https://images.seeklogo.com/logo-png/39/1/yape-app-logo-png_seeklogo-399697.png" alt="Yape" class="payment-icon">
-              <h3>Yape</h3>
-              <p>Número: 917 039 670</p>
-              <p>Kevin Naiyel. T. C.</p>
-              <button class="qr-toggle" onclick="toggleQR('qr-yape')">Ver QR</button>
-              <div id="qr-yape" class="qr-box">
-                <img src="https://i.imgur.com/hWGfhvX.png" alt="QR Yape">
-              </div>
+              <h4>Yape</h4>
+              <p>917039670</p>
             </div>
             <div class="payment-card">
-              <img src="https://images.seeklogo.com/logo-png/38/1/plin-logo-png_seeklogo-386806.png" alt="Plin" class="payment-icon">
-              <h3>Plin</h3>
-              <p>Número: 917 039 670</p>
-              <p>Kevin Naiyel. T. C.</p>
-              <button class="qr-toggle" onclick="toggleQR('qr-plin')">Ver QR</button>
-              <div id="qr-plin" class="qr-box">
-                <img src="https://i.imgur.com/aZx3gTj.png" alt="QR Plin">
-              </div>
+              <h4>Plin</h4>
+              <p>917039670</p>
             </div>
             <div class="payment-card">
-              <img src="https://play-lh.googleusercontent.com/HGGprMzTt8ICmRhA74iH2u_baQwHRiqMknw6CVyz8B--t2fJ1J6YVQANnrgJZUCD7x4=s96-rw" alt="Lemon Cash" class="payment-icon">
-              <h3>Lemon Cash</h3>
-              <p>Kevin Naiyel. T. C.</p>
-              <p>$lemontag: kevintx28</p>
-              <p>CCI: 92200300000275903595</p>
-              <button class="qr-toggle" onclick="toggleQR('qr-lemon')">Ver QR</button>
-              <div id="qr-lemon" class="qr-box">
-                <img src="https://i.imgur.com/zKIItla.png" alt="QR Lemon Cash">
-              </div>
-            </div>
-            <div class="payment-card">
-              <img src="https://staging.remoteworksource.com/wp-content/uploads/2022/05/Prex.jpg" alt="Prex PE" class="payment-icon">
-              <h3>Prex PE</h3>
-              <p>Kevin Naiyel. T. C.</p>
-              <p>CCI: 77600100000207500006</p>
-              <button class="qr-toggle" onclick="toggleQR('qr-prex')">Ver QR</button>
-              <div id="qr-prex" class="qr-box">
-                <img src="https://i.imgur.com/j5QisZ7.png" alt="QR Prex">
-              </div>
-            </div>
-            <div class="payment-card">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGly0AYJdvlHIi9rFKs6wZmcz2OQhUa0OZhg&s" alt="Ligo" class="payment-icon">
-              <h3>Ligo</h3>
-              <p>Kevin Naiyel. T. C.</p>
-              <button class="qr-toggle" onclick="toggleQR('qr-ligo')">Ver QR</button>
-              <div id="qr-ligo" class="qr-box">
-                <img src="https://i.imgur.com/ailnI6A.png" alt="QR Ligo">
-              </div>
-            </div>
-            <div class="payment-card">
-              <img src="https://static.vecteezy.com/system/resources/previews/054/061/035/non_2x/binance-logo-free-download-free-vector.jpg" alt="Binance" class="payment-icon">
-              <h3>Binance</h3>
-              <p>User-e5319</p>
-              <button class="qr-toggle" onclick="toggleQR('qr-binance')">Ver QR</button>
-              <div id="qr-binance" class="qr-box">
-                <img src="https://i.imgur.com/yIhJ8Da.jpeg" alt="QR Binance">
-              </div>
-            </div>
-            <div class="payment-card">
-              <img src="https://cdn.worldvectorlogo.com/logos/pago-efectivo-2020.svg" alt="Pago Efectivo" class="payment-icon">
-              <h3>Pago Efectivo</h3>
-              <p>En puntos autorizados</p>
-              <button class="qr-toggle" onclick="toggleQR('qr-efectivo')">Ver QR</button>
-              <div id="qr-efectivo" class="qr-box">
-                <img src="https://i.imgur.com/riUjunw.png" alt="QR Pago Efectivo">
-              </div>
-            </div>
-            <div class="payment-card">
-              <img src="https://mir-s3-cdn-cf.behance.net/projects/404/d33967131786565.Y3JvcCwxMTU2LDkwNCwzNjksMjA.png" alt="Tambo" class="payment-icon">
-              <h3>Tambo</h3>
-              <p>Paga en caja</p>
-              <button class="qr-toggle" onclick="toggleQR('qr-tambo')">Ver QR</button>
-              <div id="qr-tambo" class="qr-box">
-                <img src="https://imgur.com/yIhJ8Da.png" alt="QR Tambo">
-              </div>
-            </div>
-            <div class="payment-card">
-              <img src="https://yt3.googleusercontent.com/ytc/AIdro_n3hsD9ylRnYFSknFp6fVkx3O5bJAr-vAZaeKK4fRTdqI8=s900-c-k-c0x00ffffff-no-rj" alt="Tambo" class="payment-icon">
-              <h3>IziPay</h3>
-              <p>IZI*PagoSeguro</p>
-              <button class="qr-toggle" onclick="toggleQR('qr-tambo')">Ver QR</button>
-              <div id="qr-tambo" class="qr-box">
-                <img src="https://i.imgur.com/QBz5ceW.jpeg" alt="QR Tambo">
-              </div>
-            </div>
-            <div class="payment-card">
-              <img src="https://images.seeklogo.com/logo-png/27/1/paypal-logo-png_seeklogo-275723.png" alt="PayPal" class="payment-icon">
-              <h3>PayPal</h3>
+              <h4>PayPal</h4>
               <p>@kevintx28</p>
-              <a href="https://www.paypal.com/paypalme/kevintx28" target="_blank" rel="noopener noreferrer" class="paypal-button">Pagar con PayPal</a>
             </div>
             <div class="payment-card">
-              <img src="https://play-lh.googleusercontent.com/--wR3NE5duy9Na9n8socdOUYsocqUfP03IPLUAIsCqQAaU_wqQ7Dv9Rh09jw23gY-Ow" alt="KasNet" class="payment-icon">
-              <h3>KasNet</h3>
-              <p>Código Kasnet: 220098</p>
-              <p>(Comisión S/2.90)</p>
+              <h4>Binance</h4>
+              <p>User-e5319</p>
             </div>
             <div class="payment-card">
-              <img src="https://www.comparasoftware.pe/image-assets/412/NDEyfGNvbnRlbnRzL2JyV1JPR0pMbmIzWmM5WWxKUjF5Wm81bm8xTjlHb011Sk0zR0ROTmUucG5n.webp" alt="Global66" class="payment-icon">
-              <h3>Global66</h3>
+              <h4>Lemon Cash</h4>
+              <p>$lemontag: kevintx28</p>
+            </div>
+            <div class="payment-card">
+              <h4>Prex PE</h4>
+              <p>Pago local con tarjeta prepago</p>
+            </div>
+            <div class="payment-card">
+              <h4>Ligo</h4>
+              <p>Transferencia instantánea</p>
+            </div>
+            <div class="payment-card">
+              <h4>KasNet</h4>
+              <p>Pago administrativo</p>
+            </div>
+            <div class="payment-card">
+              <h4>Global66</h4>
               <p>Transferencias internacionales</p>
-              <p>Número de cuenta dólares: 8339236491</p>
-              <p>Wallet: 0x749c05a5eec70db2ac384a29d5a85f5bae574969</p>
-            </div>
-            <div class="payment-card">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Steam_icon_logo.svg/960px-Steam_icon_logo.svg.png" alt="Steam" class="payment-icon">
-              <h3>Steam</h3>
-              <p>Transferencias Saldo Steam</p>
-              <p>ID Steam: 1118458511 (Kevintx28)</p>
             </div>
           </div>
-          <div class="crypto-wrapper">
-            <div class="crypto-header" onclick="toggleCrypto(this)">₿ Pagos por Criptomonedas</div>
-            <div id="crypto-content" class="crypto-content">
-              <div class="payments-grid">
-                <div class="payment-card">
-                  <img src="https://www.citypng.com/public/uploads/preview/orange-bitcoin-btc-icon-png-701751695055377fplb1soszf.png" alt="Bitcoin" class="payment-icon">
-                  <h3>Bitcoin</h3>
-                  <p>Dirección BTC: bc1qg39jun94mj07htsjxvsfce5laage99e3sh5v3c</p>
-                  <button class="qr-toggle" onclick="toggleQR('qr-btc')">Ver QR</button>
-                  <div id="qr-btc" class="qr-box">
-                    <img src="https://i.imgur.com/hGX3dKX.png" alt="QR Bitcoin">
-                  </div>
-                </div>
-                <div class="payment-card">
-                  <img src="https://www.citypng.com/public/uploads/preview/ethereum-eth-round-logo-icon-png-701751694969815akblwl2552.png" alt="Ethereum" class="payment-icon">
-                  <h3>Ethereum</h3>
-                  <p>Dirección USDT: 0x6d49cEc81e10337AE482f5C041E56515CF2071e1</p>
-                  <button class="qr-toggle" onclick="toggleQR('qr-eth')">Ver QR</button>
-                  <div id="qr-eth" class="qr-box">
-                    <img src="https://i.imgur.com/1kDKao2.png" alt="QR Ethereum">
-                  </div>
-                </div>
-                <div class="payment-card">
-                  <img src="https://images.seeklogo.com/logo-png/32/1/tether-usdt-logo-png_seeklogo-323175.png" alt="USDT" class="payment-icon">
-                  <h3>USDT</h3>
-                  <p>Dirección USDC: 0x6d49cEc81e10337AE482f5C041E56515CF2071e1</p>
-                  <button class="qr-toggle" onclick="toggleQR('qr-usdt')">Ver QR</button>
-                  <div id="qr-usdt" class="qr-box">
-                    <img src="https://i.imgur.com/XZx893M.png" alt="QR USDT">
-                  </div>
-                </div>
-                <div class="payment-card">
-                  <img src="https://images.seeklogo.com/logo-png/40/1/usd-coin-usdc-logo-png_seeklogo-408043.png" alt="USDC" class="payment-icon">
-                  <h3>USDC</h3>
-                  <p>Dirección ETH: 0x6d49cEc81e10337AE482f5C041E56515CF2071e1</p>
-                  <button class="qr-toggle" onclick="toggleQR('qr-usdc')">Ver QR</button>
-                  <div id="qr-usdc" class="qr-box">
-                    <img src="https://i.imgur.com/Rnr2ecI.png" alt="QR USDC">
-                  </div>
-                </div>
-              </div>
+          <div class="qr-grid">
+            <div class="qr-card">
+              <span>Yape / Plin</span>
+              <img src="https://i.imgur.com/hWGfhvX.png" alt="QR Yape" />
+              <button>Ver QR</button>
+            </div>
+            <div class="qr-card">
+              <span>PayPal</span>
+              <img src="https://via.placeholder.com/260x180/0b1221/16203a?text=QR+PayPal" alt="QR PayPal" />
+              <button>Ver QR</button>
+            </div>
+            <div class="qr-card">
+              <span>Binance</span>
+              <img src="https://via.placeholder.com/260x180/0b1221/16203a?text=QR+Binance" alt="QR Binance" />
+              <button>Ver QR</button>
             </div>
           </div>
         </div>
@@ -1366,7 +1153,7 @@
     });
 
     function comprar(nombre, tiempo) {
-      const mensaje = `Hola ctm, quiero comprar ${nombre} por ${tiempo}`;
+      const mensaje = `Hola, quiero comprar ${nombre} por ${tiempo}`;
       const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(mensaje)}`;
       window.open(url, '_blank');
     }
@@ -1377,19 +1164,6 @@
 
     function closeModal() {
       document.getElementById('paymentModal').classList.remove('open');
-    }
-
-    function toggleQR(id) {
-      const el = document.getElementById(id);
-      if (!el) return;
-      el.classList.toggle('open');
-    }
-
-    function toggleCrypto(el) {
-      const content = el.nextElementSibling;
-      if (!content) return;
-      const open = content.classList.toggle('open');
-      el.classList.toggle('active', open);
     }
   </script>
 </body>
