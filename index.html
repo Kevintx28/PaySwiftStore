@@ -1346,6 +1346,117 @@
                         estadoClase: 'unavailable'
                     }
                 ]
+            },
+            {
+                categoria: 'Adobe y Microsoft Office',
+                icono: '💼',
+                items: [
+                    {
+                        nombre: 'Adobe Photoshop',
+                        descripcion: 'Próximamente disponible.',
+                        precios: [],
+                        estado: 'Próximamente',
+                        estadoClase: 'unavailable'
+                    },
+                    {
+                        nombre: 'Adobe Illustrator',
+                        descripcion: 'Próximamente disponible.',
+                        precios: [],
+                        estado: 'Próximamente',
+                        estadoClase: 'unavailable'
+                    },
+                    {
+                        nombre: 'Adobe Premiere Pro',
+                        descripcion: 'Próximamente disponible.',
+                        precios: [],
+                        estado: 'Próximamente',
+                        estadoClase: 'unavailable'
+                    },
+                    {
+                        nombre: 'Adobe After Effects',
+                        descripcion: 'Próximamente disponible.',
+                        precios: [],
+                        estado: 'Próximamente',
+                        estadoClase: 'unavailable'
+                    },
+                    {
+                        nombre: 'Adobe Lightroom',
+                        descripcion: 'Próximamente disponible.',
+                        precios: [],
+                        estado: 'Próximamente',
+                        estadoClase: 'unavailable'
+                    },
+                    {
+                        nombre: 'Adobe Acrobat Pro',
+                        descripcion: 'Próximamente disponible.',
+                        precios: [],
+                        estado: 'Próximamente',
+                        estadoClase: 'unavailable'
+                    },
+                    {
+                        nombre: 'Adobe InDesign',
+                        descripcion: 'Próximamente disponible.',
+                        precios: [],
+                        estado: 'Próximamente',
+                        estadoClase: 'unavailable'
+                    },
+                    {
+                        nombre: 'Adobe XD',
+                        descripcion: 'Próximamente disponible.',
+                        precios: [],
+                        estado: 'Próximamente',
+                        estadoClase: 'unavailable'
+                    },
+                    {
+                        nombre: 'Microsoft Office 365',
+                        descripcion: 'Próximamente disponible.',
+                        precios: [],
+                        estado: 'Próximamente',
+                        estadoClase: 'unavailable'
+                    },
+                    {
+                        nombre: 'Microsoft Word',
+                        descripcion: 'Próximamente disponible.',
+                        precios: [],
+                        estado: 'Próximamente',
+                        estadoClase: 'unavailable'
+                    },
+                    {
+                        nombre: 'Microsoft Excel',
+                        descripcion: 'Próximamente disponible.',
+                        precios: [],
+                        estado: 'Próximamente',
+                        estadoClase: 'unavailable'
+                    },
+                    {
+                        nombre: 'Microsoft PowerPoint',
+                        descripcion: 'Próximamente disponible.',
+                        precios: [],
+                        estado: 'Próximamente',
+                        estadoClase: 'unavailable'
+                    },
+                    {
+                        nombre: 'Microsoft Outlook',
+                        descripcion: 'Próximamente disponible.',
+                        precios: [],
+                        estado: 'Próximamente',
+                        estadoClase: 'unavailable'
+                    },
+                    {
+                        nombre: 'Microsoft OneNote',
+                        descripcion: 'Próximamente disponible.',
+                        precios: [],
+                        estado: 'Próximamente',
+                        estadoClase: 'unavailable'
+                    },
+                    {
+                        nombre: 'Microsoft Teams',
+                        descripcion: 'Próximamente disponible.',
+                        precios: [],
+                        estado: 'Próximamente',
+                        estadoClase: 'unavailable'
+                    }
+                ]
             }
         ];
 
@@ -1369,7 +1480,7 @@
             seccion.items.forEach(item => {
                 const card = document.createElement('article');
                 card.className = 'card';
-                const statusEmoji = item.estado === 'Disponible' ? '✅' : item.estado === 'No disponible' ? '❌' : '❓';
+                const statusEmoji = item.estado === 'Disponible' ? '✅' : item.estado === 'No disponible' ? '❌' : item.estado === 'Próximamente' ? '⏳' : '❓';
                 card.innerHTML = `
           <h3>${item.nombre}</h3>
           <div class="status ${item.estadoClase}"><span>${statusEmoji}</span>${item.estado}</div>
